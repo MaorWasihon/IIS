@@ -1,7 +1,3 @@
-FROM mcr.microsoft.com/windows/servercore/iis
+FROM FROM httpd:2.4
 
-RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
-
-WORKDIR /inetpub/wwwroot
-
-COPY . . 
+COPY . /usr/local/apache2/htdocs/
